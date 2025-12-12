@@ -1,0 +1,355 @@
+
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sempre Quente — Doces & Salgados</title>
+  <link rel="stylesheet" href="estilo/home.css">
+  <style>
+  
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:var(--accent);
+      display:flex;align-items:center;justify-content:center;color:#fff;
+      font-weight:800;font-size:20px;box-shadow:var(--shadow)
+    }
+    .brand h1{margin:0;font-size:20px}
+    .brand p{margin:0;font-size:13px;color:var(--muted)}
+
+    nav{display:flex;gap:12px;align-items:center}
+    .btn{
+      background:var(--accent);border:none;color:#fff;padding:10px 14px;
+      border-radius:10px;cursor:pointer;font-weight:600;text-decoration:none;
+      display:inline-block
+    }
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(245,158,11,0.25)}
+
+    /* HERO */
+    .hero{
+      display:grid;grid-template-columns:1fr 320px;gap:24px;margin-bottom:28px;align-items:center
+    }
+    .hero-card{
+      background:var(--card);padding:28px;border-radius:var(--radius);box-shadow:var(--shadow)
+    }
+    .hero-card h2{margin:0 0 8px;font-size:28px}
+    .hero-card p{margin:0;color:var(--muted)}
+
+    .controls{display:flex;gap:8px;margin-top:16px}
+    .search{flex:1;display:flex}
+    .search input{flex:1;padding:10px 12px;border-radius:10px;border:1px solid #ddd}
+
+    .shop-info{background:var(--card);padding:20px;border-radius:12px;box-shadow:var(--shadow)}
+
+    /* Faixa animada */
+    .scroll-banner {
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 20px 0;
+      padding: 12px 0;
+      background: rgba(245,158,11,0.12);
+      border-radius: 10px;
+      font-weight:700;
+      color: var(--accent);
+    }
+    .scroll-content {
+      display: inline-block;
+      animation: scroll 18s linear infinite;
+    }
+    @keyframes scroll {
+      0% {transform: translateX(100%)}
+      100% {transform: translateX(-100%)}
+    }
+
+    /* Produtos */
+    .products{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      margin-top:12px
+    }
+    .product{
+      background:var(--card);border-radius:12px;padding:12px;box-shadow:var(--shadow);
+      display:flex;flex-direction:column
+    }
+    .thumb{height:140px;border-radius:10px;overflow:hidden;background:#eee;margin-bottom:10px}
+    .thumb img{width:100%;height:100%;object-fit:cover}
+    .meta h4{margin:0 0 6px}
+    .meta p{margin:0;color:var(--muted);font-size:13px}
+
+    .product-foot{
+      display:flex;justify-content:space-between;align-items:center;
+      margin-top:12px
+    }
+    .price{font-weight:800}
+    .small{padding:8px 10px;border-radius:8px;border:1px solid #eee;background:transparent;cursor:pointer}
+
+    footer{
+      margin-top:36px;padding:18px 12px;border-top:1px solid #eee;
+      color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap
+    }
+
+    @media(max-width:1000px){.products{grid-template-columns:repeat(3,1fr)} .hero{grid-template-columns:1fr}}
+    @media(max-width:740px){
+      header{flex-direction:column;align-items:flex-start}
+      nav{width:100%;justify-content:space-between}
+      .products{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:420px){.products{grid-template-columns:1fr}}
+  </style>
+
+  
+
+</head>
+<body>
+  <div class="site">
+    <header>
+      <div class="brand">
+        <div class="logo">SQ</div>
+        <div>
+          <h1>Sempre Quente</h1>
+          <p>Doces &amp; Salgados — fresquinhos todos os dias</p>
+        </div>
+      </div>
+      <nav>
+        <div class="badge">Aberto • 07:00–20:00</div>
+        <button class="btn">Carrinho</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card">
+          <h2>Seus favoritos, sempre quentes</h2>
+          <p>Escolha entre uma variedade de salgados e doces preparados diariamente. Encomendas por telefone ou retire na loja.</p>
+
+          <div class="controls">
+            <div class="search">
+              <input placeholder="Pesquisar produtos (ex: coxinha, brigadeiro)" />
+            </div>
+            <button class="btn ghost">Filtrar</button>
+            <button class="btn">Ver cardápio</button>
+          </div>
+
+          <div style="display:flex;gap:12px;margin-top:16px">
+            <div style="flex:1">
+              <strong>Entrega</strong>
+              <div style="color:var(--muted);font-size:13px">Zona central de Luanda — consulte área</div>
+            </div>
+            <div style="flex:1">
+              <strong>Pagamento</strong>
+              <div style="color:var(--muted);font-size:13px">Dinheiro / Transferência / Mb Way</div>
+            </div>
+
+          
+          </div>
+              <!-- BOTÃO WHATSAPP NA HERO -->
+        <a href="https://wa.me/244948615462" target="_blank"
+           class="btn" 
+           style="background:#25D366;width:100%;margin-top:18px;text-align:center;">
+           Fazer Pedido no WhatsApp
+        </a>
+        </div>
+
+        <aside class="shop-info">
+          <h3>Informações</h3>
+          <p><strong>Localização:</strong> Luanda, Angola</p>
+          <p><strong>Telefone:</strong> +244 948 615 462</p>
+          <p style="margin-top:8px;font-size:13px;color:var(--muted)">Peça com antecedência em horários de maior movimento.</p>
+        </aside>
+      </section>
+  <!-- FAIXA ANIMADA -->
+    <div class="scroll-banner">
+      <div class="scroll-content">
+        ⭐ Promoções da semana • Coxinha • Brigadeiro • Kibe • Sonho • Empada • Sempre Quente ⭐
+      </div>
+    </div>
+      <section>
+        <h3 style="margin:0 0 10px">Produtos em destaque</h3>
+        <div class="products">
+          <!-- Product 1 -->
+          <article class="product">
+            <div class="thumb"><img src="imagens/WhatsApp Image 2025-12-08 at 8.40.50 PM (1).jpeg" alt="Coxinha"></div>
+            <div class="meta">
+              <h4>Coxinha Tradicional</h4>
+              <p>Salgado recheado com frango cremoso.</p>
+            </div>
+            <div class="product-foot">
+              <div class="price">AOA 1.75</div>
+              <div class="actions">
+                <button class="small">Adicionar</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="product">
+            <div class="thumb"><img src="imagens/WhatsApp Image 2025-12-08 at 8.40.50 PM.jpeg" alt="Empada"></div>
+            <div class="meta">
+              <h4>Empada de Palmito</h4>
+              <p>Massa amanteigada e recheio fresco de palmito.</p>
+            </div>
+            <div class="product-foot">
+              <div class="price">AOA 2.00</div>
+              <div class="actions">
+                <button class="small">Adicionar</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="product">
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Brigadeiro"></div>
+            <div class="meta">
+              <h4>Brigadeiro Gourmet</h4>
+              <p>Brigadeiro cremoso com granulado especial.</p>
+            </div>
+            <div class="product-foot">
+              <div class="price">AOA 0.90</div>
+              <div class="actions">
+                <button class="small">Adicionar</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 4 -->
+          <article class="product">
+            <div class="thumb"><img src="imagens/WhatsApp Image 2025-12-12 at 7.40.10 AM.jpeg" alt="Quindim"></div>
+            <div class="meta">
+              <h4>Quindim</h4>
+              <p>Quindim tradicional com brilho e sabor autêntico.</p>
+            </div>
+            <div class="product-foot">
+              <div class="price">AOA 1.50</div>
+              <div class="actions">
+                <button class="small">Adicionar</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 5 -->
+          <article class="product">
+            <div class="thumb"><img src="imagens/WhatsApp Image 2025-12-12 at 7.40.10 AM (1).jpeg" alt="Kibe"></div>
+            <div class="meta">
+              <h4>Kibe</h4>
+              <p>Kibe assado com tempero especial.</p>
+            </div>
+            <div class="product-foot">
+              <div class="price">AOA 1.60</div>
+              <div class="actions">
+                <button class="small">Adicionar</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 6 -->
+          <article class="product">
+            <div class="thumb"><img src="imagens/WhatsApp Image 2025-12-08 at 8.40.51 PM (2).jpeg"></div>
+            <div class="meta">
+              <h4>Pão de Queijo</h4>
+              <p>Pão de queijo macio e quentinho.</p>
+            </div>
+            <div class="product-foot">
+              <div class="price">AOA 0.95</div>
+              <div class="actions">
+                <button class="small">Adicionar</button>
+                
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 7 -->
+          <article class="product">
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Sonho"></div>
+            <div class="meta">
+              <h4>Sonho Recheado</h4>
+              <p>Sonho recheado com creme de baunilha.</p>
+            </div>
+            <div class="product-foot">
+              <div class="price">AOA 2.25</div>
+              <div class="actions">
+                <button class="small">Adicionar</button>
+               
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 8 -->
+          <article class="product">
+            <div class="thumb"><img src="imagens/WhatsApp Image 2025-12-08 at 8.40.52 PM.jpeg" alt="Torta de limão"></div>
+            <div class="meta">
+              <h4>Torta de Limão (fatia)</h4>
+              <p>Fatias prontas para sua sobremesa.</p>
+            </div>
+            <div class="product-foot">
+              <div class="price">AOA 3.50</div>
+              <div class="actions">
+                <button class="small">Adicionar</button>
+                
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+     <!-- MODAL GLOBAL -->
+<div id="modal" style="display:none; position:fixed; top:0; left:0;width:100%;height:100%;background:rgba(0,0,0,0.6); justify-content:center; align-items:center; padding:20px;">
+  <div style="background:#fff; max-width:400px; width:100%; border-radius:10px; padding:20px; text-align:center; position:relative;">
+    <button id="closeModal" style="position:absolute;top:10px;right:10px;background:red;color:#fff;border:none;padding:5px 10px;border-radius:5px;cursor:pointer;">X</button>
+    <img id="modalImg" src="" style="width:100%; border-radius:10px; height:200px; object-fit:cover;">
+    <h2 id="modalTitle" style="color:#ff7b00;margin-top:10px"></h2>
+    <p id="modalDesc" style="font-size:14px;color:#555"></p>
+    <p id="modalPrice" style="font-weight:bold;margin-top:10px"></p>
+    <a id="modalWhats" href="#" target="_blank" style="display:inline-block;margin-top:12px;background:#25D366;color:white;padding:10px 15px;border-radius:5px;text-decoration:none;">Pedir no WhatsApp</a>
+  </div>
+</div>
+      <footer>
+        <div>© <span id="year"></span> Sempre Quente — Desenvolvido por <a href="https://alexandreamaral27.github.io/Project-Portifolio/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnaowmtFP5SX8qK60jxtJjd1hFmuOUmzpEIyzb72grKNuZHRUalgAUDXY2vpM_aem_WBaChpaOnK7ypwC6If0JMA">Alexandre Amaral</a>.</div>
+        <div>Pagamento na entrega • Suporte: +244 948 615 462 </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // só ajuste visual: atualiza o ano no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modalImg');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalPrice = document.getElementById('modalPrice');
+  const modalWhats = document.getElementById('modalWhats');
+  const closeModal = document.getElementById('closeModal');
+
+  document.querySelectorAll('.product').forEach(prod => {
+    const verBtn = prod.querySelector('.small');
+    verBtn.addEventListener('click', () => {
+      const img = prod.querySelector('img').src;
+      const title = prod.querySelector('h4').textContent;
+      const desc = prod.querySelector('p').textContent;
+      const price = prod.querySelector('.price').textContent;
+
+      modalImg.src = img;
+      modalTitle.textContent = title;
+      modalDesc.textContent = desc;
+      modalPrice.textContent = price;
+      modalWhats.href = `https://wa.me/244948615462?text=Olá! Quero pedir: ${encodeURIComponent(title)} - ${encodeURIComponent(price)}`;
+
+      modal.style.display = 'flex';
+    });
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', e => {
+    if(e.target === modal) modal.style.display = 'none';
+  });
+</script>
+</body>
+</html>
+
